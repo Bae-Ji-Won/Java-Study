@@ -7,7 +7,7 @@ class RandomCalculator{
     final int random;
     RandomCalculator(int num){
         this.num = num;
-        this.random = num * (int)(Math.random()*9)+1;
+        this.random = num * (int)(Math.random()*9);
     }
 
     public int plus(){
