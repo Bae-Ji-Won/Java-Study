@@ -1,3 +1,5 @@
+package Date10_04;
+
 public class ArrayTest {
     public static void main(String[] args) {
         System.out.println("hello");
