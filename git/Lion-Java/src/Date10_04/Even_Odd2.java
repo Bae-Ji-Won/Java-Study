@@ -1,3 +1,5 @@
+package Date10_04;
+
 import java.util.Scanner;
 
 public class Even_Odd2 {
