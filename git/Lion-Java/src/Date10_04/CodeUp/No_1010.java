@@ -1,4 +1,4 @@
-package CodeUp;
+package Date10_04.CodeUp;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package CodeUp;
+package Date10_04.CodeUp;
 
 public class No_1008 {
     public static void main(String[] args) {
