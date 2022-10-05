@@ -3,7 +3,7 @@ package Date10_05;
 import java.util.Scanner;
 
 class RandomCalculator{
-    int num;
+    private int num;
     final int random;
     RandomCalculator(int num){
         this.num = num;
