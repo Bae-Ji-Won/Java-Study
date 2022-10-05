@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Date10_04;
 
 public class Money3 {
     public static void main(String[] args) {
