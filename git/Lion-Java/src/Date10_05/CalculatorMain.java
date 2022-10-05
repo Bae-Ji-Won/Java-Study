@@ -16,8 +16,8 @@ class Calculator{
         return num*num2;
     }
 
-    public static int div(int num, int num2){
-        return num/num2;
+    public static double div(int num, int num2){
+        return (double)num/(double)num2;
     }
 }
 
