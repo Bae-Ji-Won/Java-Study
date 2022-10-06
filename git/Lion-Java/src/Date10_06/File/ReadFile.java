@@ -14,9 +14,7 @@ public class ReadFile {
     }
 
     char filereader() throws IOException {
-        BufferedReader br = new BufferedReader(
-                new FileReader(filename)
-        );
+        FileReader br = new FileReader(filename);
 
         return (char)br.read();
     }
