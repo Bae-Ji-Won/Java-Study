@@ -11,3 +11,11 @@ public class FindFile {
         }
     }
 }
+
+/*
+.\.git
+.\.idea
+.\git
+.\Java-Study.iml
+.\README.md
+*/
