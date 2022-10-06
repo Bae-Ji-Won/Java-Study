@@ -19,3 +19,4 @@ public class ReadFile {
         return (char)br.read();
     }
 }
+
