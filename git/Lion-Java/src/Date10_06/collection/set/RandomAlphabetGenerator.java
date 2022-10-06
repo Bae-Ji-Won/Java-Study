@@ -5,4 +5,5 @@ public class RandomAlphabetGenerator implements AlphabetGenerator{
     public char generate(){
         return (char)((int)(Math.random()*26)+65) ;
     }
+
 }
