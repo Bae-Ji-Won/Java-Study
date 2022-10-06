@@ -11,7 +11,8 @@ import java.nio.file.Paths;
 public class ReadFileMain {
     public static void main(String[] args) throws IOException {
         ReadFile rf = new ReadFile
-        ("C:\\Users\\qowhx\\OneDrive\\바탕 화면\\hello.txt");
+        ("C:\\Users\\qowhx\\OneDrive\\바탕 화면\\hello.txt",4);
+
 
             System.out.print(rf.filereader());
     }
