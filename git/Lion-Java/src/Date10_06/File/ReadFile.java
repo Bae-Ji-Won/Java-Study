@@ -8,15 +8,17 @@ import java.io.IOException;
 public class ReadFile {
 
     private String filename;
-
+    private String str = "";
     ReadFile(String filename){
         this.filename = filename;
     }
 
-    char filereader() throws IOException {
+    String filereader() throws IOException {
         FileReader br = new FileReader(filename);
-
-        return (char)br.read();
+        for(int i =0; i<2; i++){
+            str += (char)br.read();
+        }
+        return str;
     }
 }
 
