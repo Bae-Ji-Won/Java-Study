@@ -1,9 +1,6 @@
 package Date10_06.File;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class ReadFile {
@@ -17,7 +14,21 @@ public class ReadFile {
     }
 
 
-    String filereader() throws IOException {
+    char onefilereader() throws IOException{            // 1자리
+        FileReader br = new FileReader(filename);
+        return (char)br.read();
+    }
+
+    String twofileReader() throws IOException{          // 2자리
+        String st = "";
+        FileReader br = new FileReader(filename);
+        for(int i=0; i<2; i++){
+            st += (char)br.read();
+        }
+        return st;
+    }
+
+    String filereader() throws IOException {        // n자리
         FileReader br = new FileReader(filename);
         for(int i =0; i<num; i++){
             str += (char)br.read();
