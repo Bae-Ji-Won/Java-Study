@@ -1,4 +1,4 @@
-package Date10_06.collection;
+package Date10_06.collection.list;
 
 public class RndNumberSwitchoutDuplicated {
     public static void main(String[] args) {
