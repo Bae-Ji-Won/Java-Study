@@ -14,6 +14,8 @@ public class ReadFileMain {
         ("C:\\Users\\qowhx\\OneDrive\\바탕 화면\\hello.txt",4);
 
 
-            System.out.print(rf.filereader());
+        System.out.println(rf.onefilereader());
+        System.out.println(rf.twofileReader());
+        System.out.print(rf.filereader());
     }
 }
