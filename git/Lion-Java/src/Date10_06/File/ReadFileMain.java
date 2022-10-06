@@ -13,7 +13,6 @@ public class ReadFileMain {
         ReadFile rf = new ReadFile
         ("C:\\Users\\qowhx\\OneDrive\\바탕 화면\\hello.txt");
 
-        System.out.println(rf.filereader());
-
+            System.out.print(rf.filereader());
     }
 }
