@@ -5,7 +5,7 @@ import java.io.IOException;
 public class ReadFileMain {
     public static void main(String[] args) throws IOException {
         ReadFile rf = new ReadFile
-        ("C:\\Users\\qowhx\\OneDrive\\바탕 화면\\hello.txt");
+        ("파일 위치");
 
 
         System.out.println(rf.onefilereader());
