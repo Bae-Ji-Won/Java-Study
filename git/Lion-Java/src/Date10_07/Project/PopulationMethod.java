@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PopulationMethod {
-    static String address = "파일위치";
+    static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
 
     static String saveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\file.txt";
     public static void ReadByChar() throws IOException {             // 1글자씩 읽기
@@ -80,7 +80,7 @@ public class PopulationMethod {
     }
 
     public void CreateFile(){            // 파일 생성
-        File file = new File(saveaddress);
+        File file = new File(saveaddress);      // 파일 생성 위치및 파일 이름
         try{
             System.out.println("파일 생성");
             file.createNewFile();
@@ -90,13 +90,13 @@ public class PopulationMethod {
         }
     }
 
-    public void Filewrite(List<PopulationMove>strs){
-        File file = new File(saveaddress);
+    public void Filewrite(List<PopulationMove>strs){        // 파일 작성
+        File file = new File(saveaddress);      
 
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for(PopulationMove str:strs){
-                writer.write(String.valueOf(str)+"\n");
+            for(PopulationMove str:strs){               // 매개변수로 받은 리스트만큼 반복
+                writer.write(String.valueOf(str)+"\n");     // 매개변수로 받은 리스트의 값+"\n" 으로 파일에 작성
             }
             writer.close();
         }catch (IOException e){
