@@ -95,8 +95,8 @@ public class PopulationMethod {
 
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for(PopulationMove str:strs){               // 매개변수로 받은 리스트만큼 반복
-                writer.write(String.valueOf(str)+"\n");     // 매개변수로 받은 리스트의 값+"\n" 으로 파일에 작성
+            for(PopulationMove str:strs){               // 참조변수로 받은 리스트만큼 반복
+                writer.write(String.valueOf(str)+"\n");     // 참조변수로 받은 리스트의 값+"\n" 으로 파일에 작성
             }
             writer.close();
         }catch (IOException e){
