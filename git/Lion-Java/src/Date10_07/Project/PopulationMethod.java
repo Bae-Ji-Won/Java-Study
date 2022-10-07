@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PopulationMethod {
-    static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
+    static String address = "파일위치";
 
 
     public static void ReadByChar() throws IOException {             // 1글자씩 읽기
