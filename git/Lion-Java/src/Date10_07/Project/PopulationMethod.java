@@ -1,18 +1,16 @@
 package Date10_07.Project;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PopulationMethod {
     static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
 
-
+    static String saveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\file.txt";
     public static void ReadByChar() throws IOException {             // 1글자씩 읽기
         FileReader fileReader = new FileReader(address);
 
@@ -65,5 +63,44 @@ public class PopulationMethod {
         int ToSido = Integer.parseInt(str[6]);
 
         return new PopulationMove(FromSido,ToSido);
+    }
+
+    public static List<PopulationMove> ReadByLineParse() throws IOException{         // 1줄씩 전부 읽어서 파싱하기
+        List<PopulationMove> pml = new ArrayList<>();           // PopulationMove arraylist 객체 초기화
+        BufferedReader reader = new BufferedReader(
+                new FileReader(address)
+        );
+        String str;
+        while ((str = reader.readLine()) != null) {             // 파일의 마지막 데이터까지 반복
+            PopulationMove pm = parse(str);                     // pm 참조변수에 parse(한줄 읽기)값 저장
+            pml.add(pm);                                        // 리스트에 pm 값 저장
+        }
+        reader.close();
+        return pml;                                             // 리스트 출력
+    }
+
+    public void CreateFile(){            // 파일 생성
+        File file = new File(saveaddress);
+        try{
+            System.out.println("파일 생성");
+            file.createNewFile();
+        }catch (IOException e){
+            System.out.println("파일 생성 못함");
+            throw new RuntimeException();
+        }
+    }
+
+    public void Filewrite(List<PopulationMove>strs){
+        File file = new File(saveaddress);
+
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            for(PopulationMove str:strs){
+                writer.write(String.valueOf(str)+"\n");
+            }
+            writer.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
