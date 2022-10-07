@@ -78,7 +78,7 @@ public class PopulationMethod {
         reader.close();
         return pml;                                             // 리스트 출력
     }
-
+ 
     public void CreateFile(){            // 파일 생성
         File file = new File(saveaddress);      // 파일 생성 위치및 파일 이름
         try{
