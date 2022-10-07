@@ -57,6 +57,7 @@ public class PopulationMethod {
         }
     }
 
+
     public static PopulationMove parse(String data) throws IOException {        // 원하는 값 추출
 
         String[] str = data.split(",");
