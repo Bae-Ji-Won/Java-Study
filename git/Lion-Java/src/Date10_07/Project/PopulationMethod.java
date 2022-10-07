@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PopulationMethod {
-    static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
+    static String address = "파일 저장 위치";
 
-    static String saveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\file.txt";
+    static String saveaddress = "파일 생성 ";
     public static void ReadByChar() throws IOException {             // 1글자씩 읽기
         FileReader fileReader = new FileReader(address);
 
