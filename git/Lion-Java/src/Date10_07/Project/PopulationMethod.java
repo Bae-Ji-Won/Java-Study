@@ -7,9 +7,9 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class PopulationMethod {
-    static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
+    static String address = "대용량 데이터 파일 위치";
 
-    static String saveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\file.txt";
+    static String saveaddress = "파일 생성할 ";
     public static void ReadByChar() throws IOException {             // 1글자씩 읽기
         FileReader fileReader = new FileReader(address);
 
@@ -61,7 +61,7 @@ public class PopulationMethod {
         int FromSido = Integer.parseInt(str[0]);            // 11
         int ToSido = Integer.parseInt(str[6]);              // 41
 
-        return new PopulationMove(FromSido,ToSido);         // 맵핑한 값 반환   "서울에서 경기도로 이사합니다"
+        return new PopulationMove(FromSido,ToSido);         // 맵핑한 값 반환   "서울,경기도"
     }
 
     public static String Heatparse(String data){            // heat에 넣기 위한 파싱
@@ -90,7 +90,7 @@ public class PopulationMethod {
             }
             mapcount.put(pm,mapcount.get(pm)+1);  // 2번째 부터 들어오는 값은 키,키값을 불러와 +1
 
-            pml.put(pm,mapcount.get(pm));         // 해쉬 pm키, 키에 따른 카운트 값 저장(중복 제거)         저장 결과 : "서울에서 경기도로 이사했습니다", 1
+            pml.put(pm,mapcount.get(pm));         // Map에 저장하여 Key만 중복제거     저장 결과 : "서울,경기도", 1
         }
         reader.close();
 
