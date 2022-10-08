@@ -11,7 +11,9 @@ import java.util.Map;
 public class PopulationMove {
     private int fromSido;
     private int toSido;
+    String coments;                 // ReadByLineParse() 메서드에서 파싱한 문자열을 저장할 변수
 
+    int num;
     public PopulationMove(){
         
     }
@@ -29,31 +31,34 @@ public class PopulationMove {
         return toSido;
     }
 
-    public String Mapping(int num){
+
+   public String Mapping(int num){         // 숫자입력시 해당하는 지역이름 반환
 
         Map<Integer,String> map = new HashMap<>();
         map.put(11,"서울");
-        map.put(21,"부산");
-        map.put(22,"대구");
-        map.put(23,"인천");
-        map.put(24,"광주");
-        map.put(25,"대전");
-        map.put(26,"울산");
-        map.put(29,"세종");
-        map.put(31,"경기도");
-        map.put(32,"강원도");
-        map.put(33,"충북");
-        map.put(34,"충남");
-        map.put(35,"전북");
-        map.put(36,"전남");
-        map.put(37,"경북");
-        map.put(38,"경남");
-        map.put(39,"제주");
+        map.put(26,"부산");
+        map.put(27,"대구");
+        map.put(28,"인천");
+        map.put(29,"광주");
+        map.put(30,"대전");
+        map.put(31,"울산");
+        map.put(36,"세종");
+        map.put(41,"경기도");
+        map.put(42,"강원도");
+        map.put(43,"충북");
+        map.put(44,"충남");
+        map.put(45,"전북");
+        map.put(46,"전남");
+        map.put(47,"경북");
+        map.put(48,"경남");
+        map.put(50,"제주");
 
         return map.get(num);
     }
+
     @Override
     public String toString() {
-      return Mapping(fromSido)+"에서 "+Mapping(toSido)+"로 이사갔습니다.";
+        return Mapping(fromSido)+","+Mapping(toSido);
     }
+
 }
