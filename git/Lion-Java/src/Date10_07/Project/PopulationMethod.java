@@ -4,8 +4,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PopulationMethod {
     static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
@@ -56,29 +55,48 @@ public class PopulationMethod {
     }
 
 
-    public static PopulationMove parse(String data) throws IOException {        // 원하는 값 추출
+    public static PopulationMove parse(String data){        // 원하는 값 추출을 위한 파싱
 
         String[] str = data.split(",");
-        int FromSido = Integer.parseInt(str[0]);
-        int ToSido = Integer.parseInt(str[6]);
+        int FromSido = Integer.parseInt(str[0]);            // 11
+        int ToSido = Integer.parseInt(str[6]);              // 41
 
-        return new PopulationMove(FromSido,ToSido);
+        return new PopulationMove(FromSido,ToSido);         // 맵핑한 값 반환   "서울에서 경기도로 이사합니다"
     }
 
-    public static List<PopulationMove> ReadByLineParse() throws IOException{         // 1줄씩 전부 읽어서 파싱하기
-        List<PopulationMove> pml = new ArrayList<>();           // PopulationMove arraylist 객체 초기화
+    public static String Heatparse(String data){            // heat에 넣기 위한 파싱
+        String[] str = data.split(",");
+        String FromSido = str[0];            // 11
+        String ToSido = str[6];              // 41
+        String result = FromSido + ","+ToSido;
+        return result;
+    }
+
+
+    public static Map<String,Integer> ReadByLineParse() throws IOException{         // 1줄씩 전부 읽어서 파싱하기
+        Map<String,Integer> pml = new HashMap<>();           // PopulationMove arraylist 객체 초기화
+        Map<String,Integer> mapcount = new HashMap<>();     // 카운트 저장할 Map
+
         BufferedReader reader = new BufferedReader(
                 new FileReader(address)
         );
         String str;
         while ((str = reader.readLine()) != null) {             // 파일의 마지막 데이터까지 반복
-            PopulationMove pm = parse(str);                     // pm 참조변수에 parse(한줄 읽기)값 저장
-            pml.add(pm);                                        // 리스트에 pm 값 저장
+            String pm = String.valueOf(parse(str));             // pm 참조변수에 parse,mapping한(한줄 읽기)값 저장
+
+            // 횟수 구하기
+            if(mapcount.get(pm) == null) {         // 처음 들어오는 값이면 1초기화
+                mapcount.put(pm,1);
+            }
+            mapcount.put(pm,mapcount.get(pm)+1);  // 2번째 부터 들어오는 값은 키,키값을 불러와 +1
+
+            pml.put(pm,mapcount.get(pm));         // 해쉬 pm키, 키에 따른 카운트 값 저장(중복 제거)         저장 결과 : "서울에서 경기도로 이사했습니다", 1
         }
         reader.close();
+
         return pml;                                             // 리스트 출력
     }
- 
+
     public void CreateFile(){            // 파일 생성
         File file = new File(saveaddress);      // 파일 생성 위치및 파일 이름
         try{
@@ -90,13 +108,14 @@ public class PopulationMethod {
         }
     }
 
-    public void Filewrite(List<PopulationMove>strs){        // 파일 작성
-        File file = new File(saveaddress);      
+    public void Filewrite(Map<String,Integer>strs){        // 파일 작성
+        File file = new File(saveaddress);
 
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            for(PopulationMove str:strs){               // 매개변수로 받은 리스트만큼 반복
-                writer.write(String.valueOf(str)+"\n");     // 매개변수로 받은 리스트의 값+"\n" 으로 파일에 작성
+
+            for(String str:strs.keySet()){               // 참조변수로 받은 리스트만큼 반복
+                writer.write(str+","+strs.get(str)+"\n");     // 참조변수로 받은 리스트의 값+"\n" 으로 파일에 작성
             }
             writer.close();
         }catch (IOException e){
