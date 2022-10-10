@@ -7,10 +7,11 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class PopulationMethod {
-    static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
+    static String address = "대용량 파일 위치";
 
-    static String saveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\file.txt";
-    static String heatsaveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\heatfile.txt";
+    static String saveaddress = "파싱,맵핑하여 추출한 데이터 저장할 파일 위치";
+    static String heatsaveaddress = "HeatMap에 필요한 데이터 저장할 파일 ";
+    
     public static void ReadByChar() throws IOException {             // 1글자씩 읽기
         FileReader fileReader = new FileReader(address);
 
