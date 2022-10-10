@@ -11,7 +11,6 @@ import java.util.Map;
 public class PopulationMove {
     private int fromSido;
     private int toSido;
-    String coments;                 // ReadByLineParse() 메서드에서 파싱한 문자열을 저장할 변수
 
     int num;
     public PopulationMove(){
