@@ -7,9 +7,10 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class PopulationMethod {
-    static String address = "대용량 데이터 파일 위치";
+    static String address = "C:\\Users\\qowhx\\OneDrive\\바탕 화면\\인구\\2021_인구관련연간자료_20221006_47106.csv";
 
-    static String saveaddress = "파일 생성할 ";
+    static String saveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\file.txt";
+    static String heatsaveaddress = "C:\\Users\\qowhx\\AppData\\Roaming\\SPB_Data\\git\\Java-Study\\heatfile.txt";
     public static void ReadByChar() throws IOException {             // 1글자씩 읽기
         FileReader fileReader = new FileReader(address);
 
@@ -64,15 +65,6 @@ public class PopulationMethod {
         return new PopulationMove(FromSido,ToSido);         // 맵핑한 값 반환   "서울,경기도"
     }
 
-    public static String Heatparse(String data){            // heat에 넣기 위한 파싱
-        String[] str = data.split(",");
-        String FromSido = str[0];            // 11
-        String ToSido = str[6];              // 41
-        String result = FromSido + ","+ToSido;
-        return result;
-    }
-
-
     public static Map<String,Integer> ReadByLineParse() throws IOException{         // 1줄씩 전부 읽어서 파싱하기
         Map<String,Integer> mapcount = new HashMap<>();     // 카운트 저장할 Map
 
@@ -111,6 +103,62 @@ public class PopulationMethod {
         try{
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 
+            for(String str:strs.keySet()){               // 참조변수로 받은 리스트만큼 반복
+                writer.write(str+","+strs.get(str)+"\n");     // 참조변수로 받은 리스트의 값+"\n" 으로 파일에 작성
+            }
+            writer.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    // -------------- heat를 위한 메서드 ----------------
+
+    public static String Heatparse(String data){            // heat에 넣기 위한 파싱
+        String[] str = data.split(",");
+        String FromSido = str[0];            // 11
+        String ToSido = str[6];              // 41
+        String result = FromSido + ","+ToSido;
+        return result;
+    }
+
+    public static Map<String,Integer> HeatReadByLineParse() throws IOException{         // heat에 넣기 위한 1줄씩 전부 읽기
+        Map<String,Integer> mapcount = new TreeMap<>();     // 카운트 저장할 Map
+
+        BufferedReader reader = new BufferedReader(
+                new FileReader(address)
+        );
+        String str;
+        while ((str = reader.readLine()) != null) {             // 파일의 마지막 데이터까지 반복
+            String pm = Heatparse(str);             // pm 참조변수에 parse,mapping한(한줄 읽기)값 저장
+
+            // 횟수 구하기
+            if(mapcount.get(pm) == null) {         // 처음 들어오는 값이면 1초기화
+                mapcount.put(pm,1);
+            }else
+                mapcount.put(pm,mapcount.get(pm)+1);  // 2번째 부터 들어오는 값은 키,키값을 불러와 +1
+        }
+        reader.close();
+
+        return mapcount;                                             // 리스트 출력
+    }
+
+    public void HeatCreateFile(){            // heat 파일 생성
+        File file = new File(heatsaveaddress);      // 파일 생성 위치및 파일 이름
+        try{
+            System.out.println("파일 생성");
+            file.createNewFile();
+        }catch (IOException e){
+            System.out.println("파일 생성 못함");
+            throw new RuntimeException();
+        }
+    }
+
+    public void HeatFilewrite(Map<String,Integer>strs){        // heat 파일 작성
+        File file = new File(heatsaveaddress);
+
+        try{
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             for(String str:strs.keySet()){               // 참조변수로 받은 리스트만큼 반복
                 writer.write(str+","+strs.get(str)+"\n");     // 참조변수로 받은 리스트의 값+"\n" 으로 파일에 작성
             }
