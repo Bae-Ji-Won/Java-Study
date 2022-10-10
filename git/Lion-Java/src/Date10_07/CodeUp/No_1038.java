@@ -1,4 +1,4 @@
-package Date10_07.Project.CodeUp;
+package Date10_07.CodeUp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
