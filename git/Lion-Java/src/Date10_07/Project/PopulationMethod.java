@@ -74,7 +74,6 @@ public class PopulationMethod {
 
 
     public static Map<String,Integer> ReadByLineParse() throws IOException{         // 1줄씩 전부 읽어서 파싱하기
-        Map<String,Integer> pml = new HashMap<>();           // PopulationMove arraylist 객체 초기화
         Map<String,Integer> mapcount = new HashMap<>();     // 카운트 저장할 Map
 
         BufferedReader reader = new BufferedReader(
@@ -89,12 +88,10 @@ public class PopulationMethod {
                 mapcount.put(pm,1);
             }
             mapcount.put(pm,mapcount.get(pm)+1);  // 2번째 부터 들어오는 값은 키,키값을 불러와 +1
-
-            pml.put(pm,mapcount.get(pm));         // Map에 저장하여 Key만 중복제거     저장 결과 : "서울,경기도", 1
         }
         reader.close();
 
-        return pml;                                             // 리스트 출력
+        return mapcount;                                             // 리스트 출력
     }
 
     public void CreateFile(){            // 파일 생성
