@@ -1,7 +1,7 @@
 package Date10_07.Project;
 
 import java.io.IOException;
-import java.util.List;
+
 
 public class PopulationStatistics {
     public static void main(String[] args) throws IOException {
@@ -13,6 +13,11 @@ public class PopulationStatistics {
      //   System.out.println(method.ReadByLineParse());
 
         method.CreateFile();
-        method.Filewrite(method.ReadByLineParse());
+        method.Filewrite(method.ReadByLineParse());         // 파싱한 값 맵핑하여 파일에 저장
+        
+        // heat 차트 작성을 위한 작업
+        method.HeatCreateFile();                    
+        method.HeatFilewrite(method.HeatReadByLineParse());
+        
     }
 }
