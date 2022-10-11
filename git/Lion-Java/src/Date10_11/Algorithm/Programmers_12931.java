@@ -8,7 +8,7 @@ public class Programmers_12931 {
         int result = 0;
 
         for(int i=0; i<str.length(); i++) {
-            result += str.charAt(i)-'0';
+            result += Integer.parseInt(String.valueOf(str.charAt(i)));
         }
 
         System.out.println(result);
