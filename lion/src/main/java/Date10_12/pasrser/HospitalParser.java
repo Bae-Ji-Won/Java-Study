@@ -62,6 +62,4 @@ public class HospitalParser implements Parser<Hospital>{
             e.printStackTrace();
         }
     }
-
-
 }
