@@ -1,23 +1,28 @@
 package Date10_12.domain;
 
 public class Hospital {
-    private String id;
-    private String address; //주소
-    private String district; //구
-    private String category; //카테고리
-    private String name; //병원명
-    private String subDivision; //세부분과
-    private int emergencyRoom; //응급 운영 현황
+    private String id;      // [0]
+    private String address; //주소  [1]
+    private String district; //구  [1]수정
+    private String category; //카테고리  [2]
+    private String name; //병원명  [10]
+    private String subDivision; //세부분과  [10] 수정
+    private int emergencyRoom; //응급 운영 현황    [6]
+
+    public Hospital(String id, String address, String category, String name, String subDivision, int emergencyRoom) {
+        this.id = id;
+        this.address = address;
+        this.category = category;
+        this.name = name;
+        this.subDivision = subDivision;
+        this.emergencyRoom = emergencyRoom;
+    }
 
     public Hospital(String id, String address) {
         this.id = id;
         this.address = address;
     }
 
-    public Hospital(String id){
-        this.id = id;
-      // this.id = id.replaceAll("\"","");       파일에서 가져온 데이터는 "정보"가 되어 있으므로 ""를 제거해 준다.
-    }
 
     public Hospital(String id, String address, String category, int emergencyRoom,
                     String name, String subDivision){
