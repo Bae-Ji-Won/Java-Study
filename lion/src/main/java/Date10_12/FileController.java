@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileController<T> {
+    String filename = "C:\\DB file\\seoul_hospital_information.txt";
     Parser<T> parser;
     boolean isRemoveColumnName = true;
 
@@ -21,7 +22,7 @@ public class FileController<T> {
         this.isRemoveColumnName = isRemoveColumnName;
     }
 
-    List<T> readLines(String filename) throws IOException {
+    List<T> readLines() throws IOException {
         List<T> result = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(filename));
         String str;
