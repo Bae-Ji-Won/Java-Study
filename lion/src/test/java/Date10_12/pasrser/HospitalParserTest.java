@@ -32,6 +32,5 @@ class HospitalParserTest {
         String subdivision = "치과";
         Assertions.assertEquals(subdivision,hospital.getSubDivision());
 
-
     }
 }
