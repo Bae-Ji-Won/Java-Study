@@ -9,8 +9,9 @@ public class Hospital {
     private String district; //구  [1]수정
     private String category; //카테고리  [2]
     private String name; //병원명  [10]
-    private String subDivision; //세부분과  [10] 수정
+    private String subDivision=""; //세부분과  [10] 수정
     private int emergencyRoom; //응급 운영 현황    [6]
+
 
     public Hospital(String id, String address, String category, int emergencyRoom,
                     String name){
@@ -19,9 +20,9 @@ public class Hospital {
         this.category = category;
         this.name = name;
         this.emergencyRoom = emergencyRoom;
-        this.subDivision = subDivision;
         this.setDistrict();
         this.setCategory();
+        this.setSubdivision();
     }
 
     public String getId() {
@@ -76,6 +77,20 @@ public class Hospital {
 
     public String getName() {
         return name;
+    }
+
+    private void setSubdivision(){
+        String[] subdivisionList = new String[]{
+                "치과", "성형외과", "한방병원", "한의원", "영상의학과", "이비인후과", "소아청소년과", "내과", "정형외과", "외과",
+                "가정의학과","피부과", "안과", "소아과", "요양병원", "비뇨기과", "정신건강의학과", "산부인과", "재활의학과",
+                "정신과", "마취통증의학과"};
+        for(String subdivision : subdivisionList){
+            if(this.name.contains(subdivision)){
+                this.subDivision=subdivision;
+            }else
+                this.subDivision = "없음";
+        }
+
     }
 
     public String getSubDivision() {
