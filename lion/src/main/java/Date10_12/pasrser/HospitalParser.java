@@ -13,4 +13,4 @@ public class HospitalParser implements Parser<Hospital>{
 
         return new Hospital(splitted[0],splitted[1],splitted[2],Integer.parseInt(splitted[6]),splitted[10]);
     }
-}
+} 
