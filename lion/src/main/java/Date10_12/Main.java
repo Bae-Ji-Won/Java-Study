@@ -9,12 +9,13 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
         FileController<Hospital> hospitalLineReader = new FileController<>(new HospitalParser());
-        String filename = "C:\\DB file\\seoul_hospital_information.csv";
-        List<Hospital> hospitals = hospitalLineReader.readLines(filename);
 
-        System.out.println(hospitals.size());
-        for (Hospital hospital : hospitals) {
-            System.out.println(hospital.getId());
-        }
+        List<Hospital> hospitals = hospitalLineReader.readLines();      // 파일에서 값을 1줄씩 전체 읽어 list에 저장
+        
+        HospitalParser hospitalParser = new HospitalParser();
+        hospitalParser.CreateFile();                // 파일 생성
+
+        hospitalParser.Filewrite(hospitals);
+        hospitalParser.DBFilewrite(hospitals);
     }
 }
