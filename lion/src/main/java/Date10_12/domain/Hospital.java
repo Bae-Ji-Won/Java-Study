@@ -57,7 +57,7 @@ public class Hospital {
         categorytmap.put("R","보건소");
         categorytmap.put("W","기타(구급차)");
 
-        category = categorytmap.get(category);
+        this.category = categorytmap.get(category);
     }
 
     public String getCategory() {
@@ -99,12 +99,27 @@ public class Hospital {
         return subDivision;
     }
 
+    public String getSqlInsertQuery(){
+        String sql = String.format("INSERT INTO `likelion-db`.`seoul_hospital`\n" +
+                "(`id`,`address`,`district`,`category`,`emergency_room`,`name`,`subdivision`)\n" +
+                "VALUES\n" +
+                "(\"%s\",\n" +
+                "\"%s\",\n" +
+                "\"%s\",\n" +
+                "\"%s\",\n" +
+                "%d,\n" +
+                "\"%s\",\n" +
+                "\"%s\");",this.id,this.address,this.district,this.category,this.emergencyRoom,this.name,this.subDivision);
+
+        return sql;
+    }
 
     @Override
     public String toString() {
         return "\"" + this.id + "\"" + "," + "\"" + this.address + "\"" + "," + "\""
                 + this.district + "\"" + "," + "\"" + this.category + "\"" + "," + this.emergencyRoom + "," + "\"" +
-                this.name + "\"" + "," + this.subDivision;
+                this.name + "\"" + "," + "\""+this.subDivision+ "\"";
     }
+
 
 }
