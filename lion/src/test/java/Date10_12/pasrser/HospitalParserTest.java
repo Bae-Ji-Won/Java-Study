@@ -15,22 +15,40 @@ class HospitalParserTest {
 
         String address = "서울특별시 송파구 동남로 208 (가락동)";
         Assertions.assertEquals("A1120837", hospital.getId());
-        Assertions.assertEquals(address,hospital.getAddress());
+        Assertions.assertEquals(address, hospital.getAddress());
 
         String district = "서울특별시 송파구";
-        Assertions.assertEquals(district,hospital.getDistrict());
+        Assertions.assertEquals(district, hospital.getDistrict());
 
         String category = "종합병원";
-        Assertions.assertEquals(category,hospital.getCategory());
+        Assertions.assertEquals(category, hospital.getCategory());
 
         String emergency = "운영중";
-        Assertions.assertEquals(emergency,hospital.getEmergencyRoom());
+        Assertions.assertEquals(emergency, hospital.getEmergencyRoom());
 
         String name = "가로수치과의원";
-        Assertions.assertEquals(name,hospital.getName());
+        Assertions.assertEquals(name, hospital.getName());
 
         String subdivision = "치과";
-        Assertions.assertEquals(subdivision,hospital.getSubDivision());
-
+        Assertions.assertEquals(subdivision, hospital.getSubDivision());
     }
+    @Test
+    @DisplayName("insert쿼리를 잘 만드는지 test")
+    void makeSqlQueryTest() {
+
+        HospitalParser hospitalParser = new HospitalParser();
+        Hospital hospital = hospitalParser.parse(this.str);
+        String sql ="INSERT INTO `likelion-db`.`seoul_hospital`\n" +
+                "(`id`,`address`,`district`,`category`,`emergency_room`,`name`,`subdivision`)\n" +
+                "VALUES\n" +
+                "(\"A1120837\",\n" +
+                "\"서울특별시 송파구 동남로 208 (가락동)\",\n" +
+                "\"서울특별시 송파구\",\n" +
+                "\"종합병원\",\n" +
+                "1,\n" +
+                "\"가로수치과의원\",\n" +
+                "\"치과\");";
+        Assertions.assertEquals(sql, hospital.getSqlInsertQuery());
+    }
+
 }
