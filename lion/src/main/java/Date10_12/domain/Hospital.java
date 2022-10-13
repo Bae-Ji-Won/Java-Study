@@ -9,6 +9,10 @@ public class Hospital {
     private String subDivision; //세부분과
     private int emergencyRoom; //응급 운영 현황
 
+    public Hospital(String id, String address) {
+        this.id = id;
+        this.address = address;
+    }
 
     public Hospital(String id){
         this.id = id;
@@ -30,9 +34,30 @@ public class Hospital {
         return id.replace("\"", "");
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getAddress() {
+        return address;
     }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSubDivision() {
+        return subDivision;
+    }
+
+    public int getEmergencyRoom() {
+        return emergencyRoom;
+    }
+
 
     public void setDistrict() {
         String[] address = this.address.split(" ");
