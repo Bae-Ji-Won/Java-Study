@@ -27,4 +27,4 @@ public class InsertSort {
 
         System.out.println(Arrays.toString(sort(arr)));
     }
-}
+} 
