@@ -7,16 +7,17 @@ import java.util.Arrays;
 public class InsertSort {
 
     static int[] sort(int[] arr){
-        int i = 1;
 
-        if(arr[i] < arr[i-1]){
-            int tmp;
-
-            tmp = arr[i];
-            arr[i] = arr[i-1];
-            arr[i-1] = tmp;
+        for(int i=1; i<arr.length; i++) {       // arr[1] ~ arr[4] 까지 반복
+            for (int j = i-1; j >= 0; j--) {    // 이전 값 모두 비교(이전값 개수만큼 반복)
+                if (arr[j+1] < arr[j]) {
+                    int tmp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = tmp;
+                }
+                System.out.println(Arrays.toString(arr));
+            }
         }
-
         return arr;
     }
 
