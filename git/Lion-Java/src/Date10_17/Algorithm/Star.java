@@ -11,18 +11,28 @@ import java.io.InputStreamReader;
     별찍기(직각 삼각형)
  */
 public class Star {
+    private char letter = '*';
+
+    public Star() {
+    }
+
+    public Star(char letter) {
+        this.letter = letter;
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        Star star = new Star('@');
 
         int num = Integer.parseInt(bf.readLine());      // 라인 개수 입력 받음
 
-        input(num);
+        star.input(num);
     }
 
-    static void input(int num){
+    public void input(int num){
         for(int i=0; i<num; i++){           // 입력 받은 라인 개수 만큼 반복
             for(int j=0; j<i+1; j++) {
-                System.out.print("*");
+                System.out.printf("%s ",this.letter);
             }
             System.out.println("");
         }
