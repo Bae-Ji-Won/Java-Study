@@ -18,11 +18,11 @@ public class Star2 {
     }
 
     static void input(int num){
-        for(int i=0; i<num; i++){
-            for(int j = 1; j<num-i; j++){
+        for(int i=0; i<num; i++){           // 라인 개수만큼 반복
+            for(int j = 1; j<num-i; j++){       // 별자리 앞에까지 빈공간 채워넣기
                 System.out.print(" ");
             }
-            for(int z = 0; z<i*2+1; z++){
+            for(int z = 0; z<i*2+1; z++){       // 별 갯수를 점점 늘려나감
                 System.out.print('*');
             }
             System.out.println();
