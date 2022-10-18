@@ -36,7 +36,7 @@ public abstract class UserDaoAbstract {
 
     public User select(String id) throws SQLException, ClassNotFoundException {
  
-        try {
+        try { 
             Connection conn = makeConnection();
             PreparedStatement ps = conn.prepareStatement("SELECT id,name,password FROM users WHERE id = ?");
             ps.setString(1, id);     // id는 get(String id)로 받은 id
