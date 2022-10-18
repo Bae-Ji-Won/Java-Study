@@ -54,7 +54,7 @@ public abstract class UserDaoAbstract {
             throw new RuntimeException(e);
         }
     }
-
+ 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         UserDao userDao = new UserDao();
         userDao.add(new User("7","Ruru","1234qwer"));   // user로 값을 받아 DTO에 저장한 후 mysql로 데이터 보냄
