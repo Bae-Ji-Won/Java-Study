@@ -3,7 +3,7 @@ package com.dbexercise.dao;
 import com.dbexercise.domain.User;
 
 import java.sql.*;
-import java.util.Map;
+import java.util.Map; 
  
 public abstract class UserDaoAbstract {
 
