@@ -53,7 +53,7 @@ public abstract class UserDaoAbstract {
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
-    }
+    } 
  
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         UserDao userDao = new UserDao();
