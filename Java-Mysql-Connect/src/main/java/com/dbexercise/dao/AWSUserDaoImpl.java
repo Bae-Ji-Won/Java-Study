@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 // 추상화 클래스 상속 받음
-// AWS 저장소에 연결함
+// AWS 저장소에 연결함     (2번째 방식)
 public class AWSUserDaoImpl extends UserDaoAbstract{
     @Override
     public Connection makeConnection() throws SQLException {

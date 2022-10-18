@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 // 추상화 상속받음
-// 로컬 저장소 연결
+// 로컬 저장소 연결    (2번째 방식)
 public class LocalUserDaoImpl extends UserDaoAbstract{
     @Override
     public Connection makeConnection() throws SQLException {

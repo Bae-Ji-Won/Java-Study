@@ -5,12 +5,12 @@ import com.dbexercise.domain.User;
 import java.sql.*;
 import java.util.Map;
 
+// 추상화를 통해 여러 DB의 값들을 따로 호출하여 사용하는 방법   (2번째 방식)
 public abstract class UserDaoAbstract {
 
     public abstract Connection makeConnection() throws SQLException;
     // DB를 여러개 동시에 사용하는 경우 각 DB에 연결시켜야 하므로 추상화 클래스를 상속받아
     // 원하는 DB로 연결시키는 방식에 사용
-
 
     public void add(User user) throws ClassNotFoundException {
 
@@ -55,9 +55,10 @@ public abstract class UserDaoAbstract {
         }
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        UserDao userDao = new UserDao();
+   public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        AWSUserDaoImpl userDao = new AWSUserDaoImpl();
         userDao.add(new User("7","Ruru","1234qwer"));   // user로 값을 받아 DTO에 저장한 후 mysql로 데이터 보냄
         System.out.println(userDao.select("1"));
     }
+
 }
