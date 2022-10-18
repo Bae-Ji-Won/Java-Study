@@ -8,7 +8,7 @@ import java.util.Map;
 public abstract class UserDaoAbstract {
 
     public abstract Connection makeConnection() throws SQLException;
-    // DB를 여러개 동시에 사용하는 경우 각 DB에 연결시켜야 하므로 추상화 클래스를 상속받아
+    // DB를 여러개 동시에 사용하는 경우 각 DB에 연결시켜야 하므로 추상화 클래스를 상속받아 
     // 원하는 DB로 연결시키는 방식에 사용
 
 
