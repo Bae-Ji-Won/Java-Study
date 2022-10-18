@@ -1,5 +1,6 @@
 package com.dbexercise;
 
+import com.dbexercise.dao.AWSConnectionMaker;
 import com.dbexercise.dao.UserDaoConnectionMaker;
 import com.dbexercise.domain.User;
 import org.junit.jupiter.api.Assertions;
@@ -12,8 +13,8 @@ import java.sql.SQLException;
 class UserDaoConnectionMakerTest {
     @Test
     void addAndSelect() throws ClassNotFoundException, SQLException {
-        UserDaoConnectionMaker userDao = new UserDaoConnectionMaker();
-        String id = "11";
+        UserDaoConnectionMaker userDao = new UserDaoConnectionMaker(new AWSConnectionMaker());
+        String id = "12";
         User user = new User(id,"test","1234");    // user 값을 DTO에 저장함
         userDao.add(user);
 
