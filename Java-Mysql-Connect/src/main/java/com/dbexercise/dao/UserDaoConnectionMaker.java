@@ -8,7 +8,11 @@ import java.util.Map;
 // 2번째 방식을 클래스로 따로 빼내어 사용하는 방식      (3번째 방법)
 public class UserDaoConnectionMaker {
 
-    AWSConnectionMaker awsConnectionMaker = new AWSConnectionMaker();
+    AWSConnectionMaker awsConnectionMaker;
+
+    public UserDaoConnectionMaker(AWSConnectionMaker awsConnectionMaker) {
+        this.awsConnectionMaker = awsConnectionMaker;
+    }
 
     public void add(User user) throws ClassNotFoundException {
 
@@ -54,7 +58,7 @@ public class UserDaoConnectionMaker {
     }
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        UserDaoConnectionMaker userDao = new UserDaoConnectionMaker();
+        UserDaoConnectionMaker userDao = new UserDaoConnectionMaker(new AWSConnectionMaker());
         userDao.add(new User("7","Ruru","1234qwer"));   // user로 값을 받아 DTO에 저장한 후 mysql로 데이터 보냄
         System.out.println(userDao.select("1"));
     }
