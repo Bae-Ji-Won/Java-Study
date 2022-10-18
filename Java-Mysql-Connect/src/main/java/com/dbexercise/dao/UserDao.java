@@ -5,6 +5,7 @@ import com.dbexercise.domain.User;
 import java.sql.*;
 import java.util.Map;
 
+// 중복코드만 따로 빼내서 작성한 코드 (첫번째 방식)
 public class UserDao {
 
     private Connection makeConnection() throws ClassNotFoundException, SQLException {
