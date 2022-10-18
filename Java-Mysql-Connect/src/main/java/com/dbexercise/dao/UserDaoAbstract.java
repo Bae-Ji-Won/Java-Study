@@ -6,6 +6,8 @@ import java.sql.*;
 import java.util.Map;
 
 // 추상화를 통해 여러 DB의 값들을 따로 호출하여 사용하는 방법   (2번째 방식)
+import java.util.Map;
+
 public abstract class UserDaoAbstract {
 
     public abstract Connection makeConnection() throws SQLException;
@@ -54,6 +56,7 @@ public abstract class UserDaoAbstract {
             throw new RuntimeException(e);
         }
     }
+
 
    public static void main(String[] args) throws ClassNotFoundException, SQLException {
         AWSUserDaoImpl userDao = new AWSUserDaoImpl();
