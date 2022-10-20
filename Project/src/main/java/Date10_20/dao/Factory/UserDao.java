@@ -8,14 +8,37 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 // 중복코드만 따로 빼내서 작성한 코드 (3번째 방식)
-public class UserDaoInterface {
+public class UserDao {
 
     private ConnectionMaker connectionMaker;    // interface의 makeConnection()를 가져옴
-    public UserDaoInterface(){                  // 생성자를 통해 AWS DB의 makeConnection()을 오버라이딩하여 사용
+    public UserDao(){                  // 생성자를 통해 AWS DB의 makeConnection()을 오버라이딩하여 사용
         this.connectionMaker = new AWSConnectionMaker();
     }
-    public UserDaoInterface(ConnectionMaker connectionMaker){
+    public UserDao(ConnectionMaker connectionMaker){
         this.connectionMaker = connectionMaker;
+    }
+
+
+    public void deleteAll() throws SQLException, ClassNotFoundException {       // DB 모든값 삭제
+        Connection conn = connectionMaker.makeConnection();
+        PreparedStatement ps = conn.prepareStatement("delete from user ");
+        ps.executeUpdate();
+        ps.close();
+        conn.close();
+    }
+
+    public int getCount() throws SQLException, ClassNotFoundException {     // user테이블의 레코드 개수를 구하기
+        Connection conn = connectionMaker.makeConnection();
+        PreparedStatement ps = conn.prepareStatement("select count(*) from users ");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        int count = rs.getInt(1);
+
+        rs.close();
+        ps.close();
+        conn.close();
+
+        return count;
     }
 
     public void add(User user) throws ClassNotFoundException {
@@ -59,11 +82,5 @@ public class UserDaoInterface {
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
-    }
-
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        UserDaoInterface userDao = new UserDaoInterface();
-        userDao.add(new User("7","Ruru","1234qwer"));   // user로 값을 받아 DTO에 저장한 후 mysql로 데이터 보냄
-        System.out.println(userDao.select("1"));
     }
 }
