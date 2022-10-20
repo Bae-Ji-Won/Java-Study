@@ -13,7 +13,7 @@ public class UserDaoInterface {
     private ConnectionMaker connectionMaker;    // interface의 makeConnection()를 가져옴
     public UserDaoInterface(){                  // 생성자를 통해 AWS DB의 makeConnection()을 오버라이딩하여 사용
         this.connectionMaker = new AWSConnectionMaker();
-    }
+    }       // 생성자 기본값을 AWS주소로 설정
     public UserDaoInterface(ConnectionMaker connectionMaker){
         this.connectionMaker = connectionMaker;
     }

@@ -3,7 +3,6 @@ package Date10_20.dao.Interface;
 // AWS DB 연결
 // 2번째 방식을 클래스로 따로 빼내어 사용하는 방식      (3번째 방법)
 // interface 상속
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
