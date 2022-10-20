@@ -11,18 +11,17 @@ import java.util.Stack;
 import static org.junit.jupiter.api.Assertions.*;
 
 class stackTest {
+        stack st = new stack();
 
-        @BeforeEach
+        @BeforeEach     // 무조건 제일 먼저 실행하고 시작함(공통값을 넣을때 주로 사용)
         void setUp() {
-            // db에서 데이터를 지우는 코드
-            // db에서 데이터를 넣는 코드
+
             System.out.println("before each");
         }
 
         @Test
         @DisplayName("push가 잘되는지")
         void push(){
-            stack st = new stack();
             st.push(10);
             st.push(20);
             Integer[] arr = st.getArr();
@@ -33,8 +32,6 @@ class stackTest {
 
         @Test
         void pushAndPop(){
-
-            stack st = new stack();
             st.push(10);
             st.push(20);
 
@@ -50,7 +47,6 @@ class stackTest {
 
         @Test
         void isEmpty() {
-            stack st = new stack();
             assertTrue(st.isEmpty());
             st.push(20);
             assertFalse(st.isEmpty());
