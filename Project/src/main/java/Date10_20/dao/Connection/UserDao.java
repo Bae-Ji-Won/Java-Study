@@ -1,6 +1,6 @@
-package com.dbexercise.dao;
+package Date10_20.dao.Connection;
 
-import com.dbexercise.domain.User;
+import Date10_20.domain.User;
 
 import java.sql.*;
 import java.util.Map;
