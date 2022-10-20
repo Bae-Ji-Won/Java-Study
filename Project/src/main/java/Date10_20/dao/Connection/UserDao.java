@@ -26,9 +26,9 @@ public class UserDao {
     public void add(User user) throws ClassNotFoundException {
 
         try{
-   // db 연결(호스트,이름,비밀번호)
+            // db 연결(호스트,이름,비밀번호)
             Connection conn = makeConnection();     // 설정들을 모아둔 메서드 호출
-            
+
             PreparedStatement ps =  conn.prepareStatement("INSERT INTO users(id,name,password) VALUES(?,?,?)");
             ps.setString(1,user.getId());        // mysql 테이블로 값 insert
             ps.setString(2,user.getName());
