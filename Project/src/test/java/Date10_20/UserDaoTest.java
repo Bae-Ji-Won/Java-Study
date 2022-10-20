@@ -1,7 +1,7 @@
-package com.dbexercise;
+package Date10_20;
 
-import com.dbexercise.dao.AWSUserDaoImpl;
-import com.dbexercise.domain.User;
+import Date10_20.dao.Abstract.AWSUserDaoImpl;
+import Date10_20.domain.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
