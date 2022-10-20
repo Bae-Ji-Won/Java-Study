@@ -1,8 +1,7 @@
 package Date10_20;
 
 
-import Date10_20.dao.Factory.AWSConnectionMaker;
-import Date10_20.dao.UserDaoConnectionMaker;
+import Date10_20.dao.Interface.UserDaoInterface;
 import Date10_20.domain.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -11,10 +10,10 @@ import java.sql.SQLException;
 
 
 // 3번째 방식 테스트
-class UserDaoConnectionMakerTest {
+class UserDaoTest {
     @Test
     void addAndSelect() throws ClassNotFoundException, SQLException {
-        UserDaoConnectionMaker userDao = new UserDaoConnectionMaker(new AWSConnectionMaker());
+        UserDaoInterface userDao = new UserDaoInterface();
         String id = "12";
         User user = new User(id,"test","1234");    // user 값을 DTO에 저장함
         userDao.add(user);
