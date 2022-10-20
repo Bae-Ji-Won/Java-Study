@@ -1,9 +1,11 @@
-package com.dbexercise.dao;
+package Date10_20.dao;
 
-import com.dbexercise.domain.User;
-
-import java.sql.*;
-import java.util.Map;
+import Date10_20.dao.Factory.AWSConnectionMaker;
+import Date10_20.domain.User;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 // 2번째 방식을 클래스로 따로 빼내어 사용하는 방식      (3번째 방법)
 public class UserDaoConnectionMaker {
