@@ -1,4 +1,4 @@
-package com.dbexercise.domain;
+package Date10_20.domain;
 
 public class User {
     private String id;
