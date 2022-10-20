@@ -12,15 +12,15 @@ import org.springframework.context.annotation.Configuration;
 public class UserDaoFactory {
 
     @Bean
-    public UserDaoInterface awsUserDao(){
+    public UserDao awsUserDao(){
         AWSConnectionMaker awsConnectionMaker = new AWSConnectionMaker();
-        UserDaoInterface userDao = new UserDaoInterface(awsConnectionMaker);
+        UserDao userDao = new UserDao(awsConnectionMaker);
         return userDao;
     }
 
     @Bean
-    public UserDaoInterface localUserDao(){
-        UserDaoInterface userDao = new UserDaoInterface(new LocalConnectionMaker());
+    public UserDao localUserDao(){
+        UserDao userDao = new UserDao(new LocalConnectionMaker());
         return userDao;
     }
 }
