@@ -21,7 +21,7 @@
 
 - 2022-10-18 : 알고리즘[For문 사각형 만들기] + Java/Mysql 연결(리팩토링 : 중복 코드 분리, Abstract하여 DB별 설정 나누기) 
 
-- 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리)
+- 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리) + spring 연동(spring 시작)
 
 - 2022-10-20 : 알고리즘[Stack(2)]
 <br />
