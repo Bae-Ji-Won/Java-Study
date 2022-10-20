@@ -1,4 +1,4 @@
-package com.dbexercise.dao;
+package Date10_20.dao.Abstract;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

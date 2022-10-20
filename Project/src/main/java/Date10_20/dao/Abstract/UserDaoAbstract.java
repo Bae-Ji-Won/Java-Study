@@ -1,12 +1,14 @@
-package com.dbexercise.dao;
+package Date10_20.dao.Abstract;
 
-import com.dbexercise.domain.User;
+import Date10_20.domain.User;
 
-import java.sql.*;
-import java.util.Map;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 // 추상화를 통해 여러 DB의 값들을 따로 호출하여 사용하는 방법   (2번째 방식)
-import java.util.Map;
+
 
 public abstract class UserDaoAbstract {
 
