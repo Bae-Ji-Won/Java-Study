@@ -23,7 +23,7 @@
 
 - 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리) + spring 연동(spring 시작)
 
-- 2022-10-20 : 알고리즘[Stack(2)] + 
+- 2022-10-20 : 알고리즘[Stack(2)] + Spring bean 설정 + 예외 처리 + Spring TDD
 
 - 2022-10-21 : 알고리즘[Stack(3)] + 
 <br />
