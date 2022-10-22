@@ -4,16 +4,19 @@ import Date10_20.dao.Factory.UserDaoFactory;
 import Date10_20.dao.Factory.UserDao;
 import Date10_20.domain.User;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(SpringExtension.class)  // spring에서 테스트 하기 위한 설정
 @ContextConfiguration(classes = UserDaoFactory.class)
@@ -23,16 +26,22 @@ class UserDaoTest {
                     // new 객체 생성을 한번만 사용함(고정값)
     ApplicationContext context; // Spring ApplicationContext를 사용하기 위해서는
     // @ExtendWith 과 @ContextConfiguration를 추가해줘야 한다.
-
+    UserDao userDao;
+    User user1;
+    User user2;
+    User user3;
+    
+    @BeforeEach
+    void setUp(){       // 각각의 테스트 시작전 필수로 동작하는 부분
+        userDao = context.getBean("awsUserDao", UserDao.class);
+        user1 = new User("1","홍길동","1234");
+        user2 = new User("2","이순신","4567");
+        user3 = new User("3","세종","7896");
+    }
     @Test
     void addAndSelect() throws ClassNotFoundException, SQLException {
-        User user1 = new User("1","홍길동","1234");
-        User user2 = new User("2","이순신","4567");
-        User user3 = new User("3","세종","7896");
 
-        UserDao userDao = context.getBean("awsUserDao", UserDao.class);     // bean 파일에서 awsUserDao 메서드를 가져온다
-      //  UserDao userDao1 = context.getBean("awsUserDao",UserDao.class);      userDao와 같은 객체를 사용함
-        
+        // .deleteAll() 오류 검증
         userDao.deleteAll();
         Assertions.assertThat(0).isEqualTo(userDao.getCount());
 
@@ -45,9 +54,26 @@ class UserDaoTest {
         Assertions.assertThat("Spring").isEqualTo(user.getName());
    //     assertEquals("Spring",user.getName());
     }
-
     @Test
-    void count(){
+        //.count test만들기
+    void count() throws SQLException, ClassNotFoundException {
 
+        UserDao userDao = context.getBean("AwsUserDao", UserDao.class);
+        //.deleteAll() 오류 검증
+        userDao.deleteAll();
+        assertEquals(0, userDao.getCount());
+
+        userDao.add(user1);
+        assertEquals(1, userDao.getCount());
+        userDao.add(user2);
+        assertEquals(2, userDao.getCount());
+        userDao.add(user3);
+        assertEquals(3, userDao.getCount());
+    }
+    @Test
+    void findById() {
+        assertThrows(EmptyResultDataAccessException.class, ()-> {
+            userDao.select("30"); // 데이터가 없을때 ResultSet이 빈 경우 null로 오류가 난다.
+        });
     }
 }
