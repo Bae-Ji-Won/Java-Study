@@ -14,8 +14,7 @@ class stackTest {
         stack st = new stack();
 
         @BeforeEach     // 무조건 제일 먼저 실행하고 시작함(공통값을 넣을때 주로 사용)
-        void setUp() {
-
+        void setUp() {  // 각 테스트가 실행되기 전에 실행되어 테스트별 구분함
             System.out.println("before each");
         }
 
