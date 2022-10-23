@@ -14,7 +14,7 @@ public class UserDao {
     public UserDao(){                  // 생성자를 통해 AWS DB의 makeConnection()을 오버라이딩하여 사용
         this.connectionMaker = new AWSConnectionMaker();
     }
-    public UserDao(ConnectionMaker connectionMaker){
+    public  UserDao(ConnectionMaker connectionMaker){
         this.connectionMaker = connectionMaker;
     }
 
@@ -25,7 +25,7 @@ public class UserDao {
        
         try {                   // 예외처리
             conn = connectionMaker.makeConnection();
-            ps = conn.prepareStatement("delete from user ");
+            ps = conn.prepareStatement("delete from users ");
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
