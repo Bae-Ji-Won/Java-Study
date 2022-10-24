@@ -25,7 +25,7 @@
 
 - 2022-10-20 : 알고리즘[Stack(2)] + Spring bean 설정 + 예외 처리 + Spring TDD
 
-- 2022-10-21 : 알고리즘[Stack(3)] + 
+- 2022-10-21 : 알고리즘[Stack(3)] + Spring Strategy + Jdbc
 <br />
 
 # ⚙️ 기술 스택
