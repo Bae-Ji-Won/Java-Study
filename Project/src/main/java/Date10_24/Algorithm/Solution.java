@@ -1,4 +1,4 @@
-package Date10_22.Algorithm;
+package Date10_24.Algorithm;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ public class Solution {
         int[] answer = new int[commands.length];
         int idx = 0;
         for(int[] command : commands){                                              // ex) [2,5,3] 들어감
-            int[] slicedArr = Arrays.copyOfRange(arr,command[0]-1,command[1]);  // 배열을 자른다   2-1,5  => 1~4까지 자름 [5,2,6,3] 
+            int[] slicedArr = Arrays.copyOfRange(arr,command[0]-1,command[1]);  // 배열을 자른다   2-1,5  => 1~4까지 자름 [5,2,6,3]
             Arrays.sort(slicedArr);     // 배열을 정렬한다.    [2,3,5,6]
             answer[idx++] = slicedArr[command[2]-1];    //3-1 = 2번째 자리 수 저장함,  5 저장
         }
