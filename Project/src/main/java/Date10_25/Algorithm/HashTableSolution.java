@@ -12,7 +12,7 @@ public class HashTableSolution {
         this.table = new int[size];
     }
 
-    public int hash(String key) {
+    public int hash(String key) {       // Hash를 통해 임의의 값(index) 출력
         int asciiSum = 0;
         for (int i = 0; i < key.length(); i++) {
             asciiSum += key.charAt(i);
@@ -20,7 +20,7 @@ public class HashTableSolution {
         return asciiSum % size;
     }
 
-    public void insert(String key, Integer value) {
+    public void insert(String key, Integer value) {     // index 공간에 값 저장
         int hashCode = hash(key);
         this.table[hashCode] = value;
         System.out.println(key + " " + hashCode + "방에 저장이 완료되었습니다.");
@@ -36,12 +36,14 @@ public class HashTableSolution {
                 "HyeongsangOh", "SuinWoo", "JuwanWoo", "InkyuYoon", "GahyunLee", "DaonLee", "DohyunLee", "SanghunLee", "SujinLee", "AjinLee", "YeonJae", "HyeonjuLee", "HakjunYim", "SeoyunJang", "SeohyeonJang", "JinseonJang", "SujinJeon", "SeunghwanJeon", "DaehwanJung", "JaeHyunJeung", "HeejunJeong", "GukhyeonCho", "MunjuJo", "YejiJo", "ChanminJu", "MinjunChoi", "SujeongChoi", "SeunghoChoi", "AyeongChoi", "GeonjooHan", "JinhyuckHeo", "MinwooHwang", "SieunHwang",
                 "JunhaHwang"};
 
+        String[] al = new String[]{"aaa","bbb","ccc"};
+
         HashTableSolution ht = new HashTableSolution(200);
-        for (int i = 0; i < names.length; i++) {
-            ht.insert(names[i] , ht.hash(names[i]));
+        for (int i = 0; i < al.length; i++) {
+            ht.insert(al[i] , ht.hash(al[i]));
         }
-        System.out.println(ht.search("DongyeonKang"));
-        System.out.println(ht.search("JiyoungAhn"));
+        System.out.println(ht.search("aaa"));
+        System.out.println(ht.search("ccc"));
     }
 }
 
