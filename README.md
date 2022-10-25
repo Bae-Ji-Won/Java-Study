@@ -22,7 +22,7 @@
 - 2022-10-18 : 알고리즘[For문 사각형 만들기] + Java/Mysql 연결(리팩토링 : 중복 코드 분리, Abstract하여 DB별 설정 나누기) 
 
 ------------------------------------------ Spring 시작 ------------------------------------------
-<br>Spring은 별도 Repository를 통해 실습을 함
+<br>Spring은 별도 Repository를 통해 공부를 진행
 https://github.com/Bae-Ji-Won/Spring-Study
 
 - 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리) + spring 연동
