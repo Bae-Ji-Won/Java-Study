@@ -23,7 +23,7 @@
 
 ------------------------------------------ Spring 시작 ------------------------------------------
 <br>Spring은 별도 Repository를 통해 실습을 함
-https://github.com/Bae-Ji-Won/Toby-spring-jdbc-practice
+https://github.com/Bae-Ji-Won/Spring-Study
 
 - 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리) + spring 연동
 
