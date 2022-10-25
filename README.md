@@ -21,18 +21,25 @@
 
 - 2022-10-18 : 알고리즘[For문 사각형 만들기] + Java/Mysql 연결(리팩토링 : 중복 코드 분리, Abstract하여 DB별 설정 나누기) 
 
-- 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리) + spring 연동(spring 시작)
+------------------------------------------ Spring 시작 ------------------------------------------
+<br>Spring은 별도 Repository를 통해 공부를 진행
+https://github.com/Bae-Ji-Won/Spring-Study
 
-- 2022-10-20 : 알고리즘[Stack(2)] + Spring bean 설정 + 예외 처리 + Spring TDD
+- 2022-10-19 : 알고리즘[Stack(1)]
 
-- 2022-10-21 : 알고리즘[Stack(3)] + Spring Strategy + Jdbc
+- 2022-10-20 : 알고리즘[Stack(2)]
 
-- 2022-10-24 : 알고리즘[배열 자르고, 정렬, 찾기] 
+- 2022-10-21 : 알고리즘[Stack(3)]
+
+- 2022-10-24 : 알고리즘[배열 자르고, 정렬, 찾기]
+
+- 2022-10-25 : 알고리즘[Hash]
 <br />
 
 # ⚙️ 기술 스택
 <div>
   <img alt="Java" src ="https://img.shields.io/badge/Java-007396.svg?&style=for-the-badge&logo=Java&logoColor=white"/>
+  <img alt="Mysql" src ="https://img.shields.io/badge/Mysql-4479A1.svg?&style=for-the-badge&logo=Mysql&logoColor=white"/>
 </div>
 
 <br />
@@ -65,4 +72,4 @@ https://velog.io/@qowl880/Java-%EB%8C%80%EC%9A%A9%EB%9F%89%EC%B2%98%EB%A6%AC-%ED
 
 ### 📗 정리 블로그
 https://velog.io/@qowl880/Java-%EB%8C%80%EC%9A%A9%EB%9F%89%EC%B2%98%EB%A6%AC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B82-owien5hj
-
+ 
