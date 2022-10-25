@@ -21,13 +21,17 @@
 
 - 2022-10-18 : 알고리즘[For문 사각형 만들기] + Java/Mysql 연결(리팩토링 : 중복 코드 분리, Abstract하여 DB별 설정 나누기) 
 
-- 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리) + spring 연동(spring 시작)
+------------------------------------------ Spring 시작 ------------------------------------------
+Spring은 별도 Repository를 통해 실습을 함
+https://github.com/Bae-Ji-Won/Toby-spring-jdbc-practice
+
+- 2022-10-19 : 알고리즘[Stack(1)] + Java/Mysql 연결(리팩토링 : Interface, class, Factory 분리) + spring 연동
 
 - 2022-10-20 : 알고리즘[Stack(2)] + Spring bean 설정 + 예외 처리 + Spring TDD
 
 - 2022-10-21 : 알고리즘[Stack(3)] + Spring Strategy + Jdbc
 
-- 2022-10-24 : 알고리즘[배열 자르고, 정렬, 찾기] 
+- 2022-10-24 : 알고리즘[배열 자르고, 정렬, 찾기] + Spring DataSource + 익명클래스 + JDBC 분리
 <br />
 
 # ⚙️ 기술 스택
