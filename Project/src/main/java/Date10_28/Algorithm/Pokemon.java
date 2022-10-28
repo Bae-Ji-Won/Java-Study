@@ -28,6 +28,7 @@ public class Pokemon {
         }
 
         int answer = (set.size()>count)? count:set.size();
+        // set의 크기가 count보다 클경우 count 출력, 작을경우 set 원소개수 출력
 
         return answer;
     }
