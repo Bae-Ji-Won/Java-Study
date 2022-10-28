@@ -15,9 +15,9 @@ public class CallBook {
         for(String phone : phone_book)
             set.add(phone);         // HashSet에 저장
 
-        for(int i=0; i<set.size(); i++){
+        for(int i=0; i<set.size(); i++){        // startWith() 메서드를 사용해서 비교할 수도 있음
             for(int j =0; j< phone_book[i].length(); j++){
-                if(set.contains(phone_book[i].substring(0,j)))
+                if(set.contains(phone_book[i].substring(0,j)))      
                     return false;
             }
         }
