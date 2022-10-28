@@ -1,5 +1,10 @@
 package Date10_28.Algorithm;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /* 프로그래머스 해쉬 - 폰켓몬
   1. 폰켓몬의 종류가 담긴 배열이 주어짐
   2. 다른종류의 폰켓몬을 고를 수 있는 횟수의 최댓값을 구함
@@ -12,11 +17,29 @@ package Date10_28.Algorithm;
   최대 다른 종류의 2가지 폰켓몬을 가져갈 수 있다.
  */
 public class Pokemon {
-    public int choosemax(String[] str){
-        int count = (str.length)/2;     // 선택할 수 있는 폰켓몬 수
+    public int choosemax(int[] nums){
+        int count = (nums.length)/2;     // 선택할 수 있는 폰켓몬 수
         
-        Set
+        Set<Integer> set = new HashSet<>();
+        
+        for(int num:nums){  // nums의 배열을 1개씩 set에 넣어줌
+                            // set의 특성을 활용해 중복 제거
+            set.add(num);
+        }
 
-        return 0;
+        int answer = (set.size()>count)? count:set.size();
+
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        Pokemon p = new Pokemon();
+        int result1 = p.choosemax(new int[]{3,1,2,3});
+        int result2 = p.choosemax(new int[]{3,3,3,2,2,4});
+        int result3 = p.choosemax(new int[]{3,3,3,2,2,2});
+
+        System.out.println(result1);
+        System.out.println(result2);
+        System.out.println(result3);
     }
 }
