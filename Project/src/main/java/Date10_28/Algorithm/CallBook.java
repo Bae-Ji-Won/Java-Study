@@ -16,9 +16,16 @@ public class CallBook {
             set.add(phone);         // HashSet에 저장
 
         for(int i=0; i<set.size(); i++){        // startWith() 메서드를 사용해서 비교할 수도 있음
+            System.out.println("길이 : "+phone_book[i].length());
             for(int j =0; j< phone_book[i].length(); j++){
-                if(set.contains(phone_book[i].substring(0,j)))      
+                if(set.contains(phone_book[i].substring(0,j)))      // 길이가 긴 값에서 값을 잘라 해당 값이 존재하는지 찾는다
+                    // ex) (1) =[12], (2) =[123]일때
+                    // (1)에서는 0~1 즉, [1]만 출력하여 자기 자신값으로 인해 false를 출력하는 것을 방지한다.
+                    // (2)에서는 0~2 즉, [12]를 출력하여 (1)과 비교하여 접두어이므로 false를 반환한다.
                     return false;
+
+
+                System.out.println(phone_book[i].substring(0,j));
             }
         }
 
