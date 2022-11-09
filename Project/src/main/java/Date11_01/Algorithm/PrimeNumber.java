@@ -8,10 +8,14 @@ package Date11_01.Algorithm;
 ex) 1~10일때 [2,3,5,7] = 4개가 존재
 
  */
+
+
 public class PrimeNumber {
     boolean isPrime(int num){
+        // 1은 소수가 아니니 2부터 자기자신보다 1작은수까지 나누어 나머지값을 구한다
+        // 만약 이때 나머지 값이 0이 나온다면 소수가 아니므로 false 출력
         for(int i = 2; i<num; i++){
-            if(num % i !=0) return false;
+            if(num % i ==0) return false;
         }
 
         return true;
@@ -19,7 +23,8 @@ public class PrimeNumber {
 
     public static void main(String[] args) {
         PrimeNumber pn = new PrimeNumber();
-        pn.isPrime(13);
+        System.out.println(pn.isPrime(13));
+
     }
 
 }
