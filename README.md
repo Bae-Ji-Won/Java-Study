@@ -1,6 +1,12 @@
 ### 🦁 멋쟁이사자처럼 백엔드
 
 # 🗓 공부 일정
+<br>
+
+📄 실습 정리 블로그 : https://velog.io/@qowl880/series/%EC%9E%90%EB%B0%94-%EC%8B%A4%EC%8A%B5
+
+📄 알고리즘 정리 블로그 : https://velog.io/@qowl880/series/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+
 - 2022-10-04 : Git + 알고리즘
   
 - 2022-10-05 : Intellij Git 사용 + 자바란? + interface 의존성과 다형성을 통한 예제 문제
@@ -53,7 +59,7 @@ https://github.com/Bae-Ji-Won/Spring-Study
 
 - 2022-11-08 : 알고리즘[이진탐색] - (코드업) 데이터탐색
 
-- 2022-11-09 : 알고리즘[선택정렬] - 기본, interface(Strategy), DiFunction 사용
+- 2022-11-09 : 알고리즘[선택정렬] - 기본, interface(Strategy), BiFunction, BiPredicate 사용
 <br />
 
 # ⚙️ 기술 스택
