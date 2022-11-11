@@ -21,7 +21,7 @@ public class SelectionSort {
         for(int i=0; i<arr.length; i++){
             int minidx = i;
             for(int j=i; j<arr.length; j++){
-                if(result[minidx]>result[j])        // interface를 통해 값만 구현후 원하는 식에 넣어 사용
+                if(result[minidx]>result[j])
                     minidx = j;
             }
             int temp = result[i];
