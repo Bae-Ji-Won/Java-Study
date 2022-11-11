@@ -3,7 +3,9 @@
 # 🗓 공부 일정
 <br>
 
-정리 블로그 : https://velog.io/@qowl880/series/%EC%9E%90%EB%B0%94-%EC%8B%A4%EC%8A%B5
+실습 정리 블로그 : https://velog.io/@qowl880/series/%EC%9E%90%EB%B0%94-%EC%8B%A4%EC%8A%B5
+
+알고리즘 정리 블로그 : https://velog.io/@qowl880/series/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 
 - 2022-10-04 : Git + 알고리즘
   
