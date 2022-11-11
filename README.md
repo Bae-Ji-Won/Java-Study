@@ -52,6 +52,8 @@ https://github.com/Bae-Ji-Won/Spring-Study
 - 2022-11-07 : 알고리즘[PriorityQueue] - (프로그래머스) 하샤드 수 찾기, 나누어 떨어지는 숫자 배열
 
 - 2022-11-08 : 알고리즘[이진탐색] - (코드업) 데이터탐색
+
+- 2022-11-09 : 알고리즘[선택정렬] - 기본, interface(Strategy), DiFunction 사용
 <br />
 
 # ⚙️ 기술 스택
