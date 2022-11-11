@@ -1,6 +1,10 @@
 ### 🦁 멋쟁이사자처럼 백엔드
 
 # 🗓 공부 일정
+<br>
+
+정리 블로그 : https://velog.io/@qowl880/series/%EC%9E%90%EB%B0%94-%EC%8B%A4%EC%8A%B5
+
 - 2022-10-04 : Git + 알고리즘
   
 - 2022-10-05 : Intellij Git 사용 + 자바란? + interface 의존성과 다형성을 통한 예제 문제
