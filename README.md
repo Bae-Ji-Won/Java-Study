@@ -60,6 +60,8 @@ https://github.com/Bae-Ji-Won/Spring-Study
 - 2022-11-08 : 알고리즘[이진탐색] - (코드업) 데이터탐색
 
 - 2022-11-09 : 알고리즘[선택정렬] - 기본, interface(Strategy), BiFunction, BiPredicate 사용
+
+- 2022-11-15 : 알고리즘[퀵정렬] - 재귀함수 사용
 <br />
 
 # ⚙️ 기술 스택
