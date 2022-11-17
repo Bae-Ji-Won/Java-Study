@@ -3,7 +3,7 @@ package Date11_15.Algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
-// 재귀함수를 통한 퀵 정렬
+// 재귀함수를 통한 퀵 정렬 - List로 풀기
 public class QuickSort {
 
     public List<Integer> merge(List<Integer> left,List<Integer> mid,List<Integer> right){
